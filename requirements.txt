@@ -3,4 +3,3 @@ TgCrypto
 python-dotenv
 hachoir
 ffmpeg-python
-pip freeze > requirements.txt
