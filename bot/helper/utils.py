@@ -1,7 +1,6 @@
 import os
 from bot import data, download_dir
 from pyrogram.types import Message
-from pyrogram.errors.exceptions.bad_request_400 import MessageNotModified
 from .ffmpeg_utils import encode, get_thumbnail, get_duration, get_width_height
 
 def on_task_complete():
@@ -28,8 +27,6 @@ def add_task(message: Message):
       else:
         msg.edit("```𝙎𝙤𝙢𝙚𝙩𝙝𝙞𝙣𝙜 𝙒𝙚𝙣𝙩 𝙒𝙧𝙤𝙣𝙜 𝘼𝙨 𝙏𝙖𝙩𝙠𝙖𝙡 𝙏𝙞𝙘𝙠𝙚𝙩 𝘽𝙤𝙤𝙠𝙞𝙣𝙜```")
         os.remove(filepath)
-    except MessageNotModified:
-      pass
     except Exception as e:
       msg.edit(f"```{e}```")
     on_task_complete()
